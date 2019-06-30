@@ -3,7 +3,7 @@ const getPlayer = require('./getPlayer');
 const statsCommand = (msg, command) => {
   //Make sure battletag is in the command
   if(command.length <= 2){
-    msg.reply("The stats command must be invoked with a BattleTag (e.g. !o stats Krusher99#1234");
+    msg.reply("The stats command must be invoked with a BattleTag. `!o stats Krusher99#1234`");
     return;
   }
   //Split name and discriminator
