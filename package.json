@@ -1,0 +1,22 @@
+{
+  "name": "overwatch-stats-bot",
+  "version": "1.0.0",
+  "description": "A discord bot to track Overwatch stats in text channels.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "mongodb": "^3.2.7",
+    "overwatch-api": "^0.7.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "overwatch",
+    "stats",
+    "bot"
+  ],
+  "author": "Sean Fried",
+  "license": "ISC"
+}
