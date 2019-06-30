@@ -22,7 +22,7 @@ const showCommand = (msg, command) => {
         if(res[0]){
           msg.reply("The BattleTag on file for you is `" +res[0].battleTag + '`');
         }else{
-          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link [BattleTag]`")
+          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link Name#1234`. Keep in mind that BattleTags are case sensitive!")
         }
       });
       // msg.reply("Linked your account!");

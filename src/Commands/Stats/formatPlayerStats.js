@@ -1,6 +1,7 @@
 const formatPlayerStats = (playerJSON) => {
 //If level reads 0, it's actually 100
 let level = playerJSON.level;
+//Blizzard set level 100 to be 0 for some dumb reason
 if(level == 0){
   level = 100;
 }

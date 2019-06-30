@@ -15,7 +15,6 @@
 
 /*
   TODO:
-    Fix crash when profile is not found
     Image generation
 */
 
