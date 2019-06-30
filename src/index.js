@@ -13,6 +13,12 @@
  *    me                (performs a stats command on battletag that's linked to discord profile)
  */
 
+/*
+  TODO:
+    Fix crash when profile is not found
+    Image generation
+*/
+
 const discord = require('discord.js');
 const client = new discord.Client();
 const loginKey = require('./loginKey');
