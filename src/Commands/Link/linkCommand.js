@@ -1,4 +1,4 @@
-const mongo = require('../Mongo/getMongo');
+const mongo = require('../../Mongo/getMongo');
 
 const linkCommand = (msg, command) => {
   if(command.length <= 2 || command[2].split('#').length !== 2){

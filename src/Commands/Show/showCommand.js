@@ -1,7 +1,6 @@
 const mongo = require('../../Mongo/getMongo');
-const getStats = require('../Stats/statsCommand');
 
-const meCommand = (msg, command) => {
+const showCommand = (msg, command) => {
   //Create Mongo Client
   const client = mongo.getMongoClient();
 
@@ -19,12 +18,12 @@ const meCommand = (msg, command) => {
       record = collection.find({_id: msg.author.id}).toArray((err, res) => {
         if(err)throw err;
 
-        //Store battle tag and add it to command to pass to stats modules
-        const battleTag = res[0].battleTag;
-        command[2] = battleTag;
-
-        //Get and display stats
-        getStats(msg, command);
+        //Send message
+        if(res[0]){
+          msg.reply("The BattleTag on file for you is `" +res[0].battleTag + '`');
+        }else{
+          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link [BattleTag]`")
+        }
       });
       // msg.reply("Linked your account!");
     }
@@ -37,4 +36,4 @@ const meCommand = (msg, command) => {
   });
 }
 
-module.exports = meCommand;
+module.exports = showCommand;

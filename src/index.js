@@ -41,7 +41,7 @@ client.on('message', msg => {
         commands.link(msg, command);
         break;
       case "show":
-        console.log("show command");
+        commands.show(msg, command);
         break;
       case "me":
         commands.me(msg, command);
