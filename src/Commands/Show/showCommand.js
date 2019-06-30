@@ -10,12 +10,11 @@ const showCommand = (msg, command) => {
 
     //Set up db and collection
     const db = client.db(mongo.dbName);
-    const collection = db.collection(mongo.collectionName);
-    let record;
+    const collection = db.collection(mongo.collectionName);    
 
     try{
       //Find record. Document ID is Discord ID
-      record = collection.find({_id: msg.author.id}).toArray((err, res) => {
+      collection.find({_id: msg.author.id}).toArray((err, res) => {
         if(err)throw err;
 
         //Send message
