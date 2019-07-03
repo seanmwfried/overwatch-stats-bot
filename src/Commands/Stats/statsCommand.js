@@ -15,7 +15,6 @@ const statsCommand = (msg, command) => {
   }else{
     //Get player info
     getPlayer(player, (playerInfo) => {
-      console.log(playerInfo);
       getStatsImage(playerInfo, (imageBuffer) => {
         msg.reply('', {file: imageBuffer});
       });

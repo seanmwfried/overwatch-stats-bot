@@ -4,17 +4,17 @@ const getStatsImage = (playerInfo, callback) => {
   //Create promises and store in an array
   const promises = [];
   promises.push(
-    jimp.read('./images/playercardBG.png'),  //0  Background
-    jimp.read(playerInfo.portrait),          //1  Player portrait
-    jimp.read('./images/iconmask.png'),      //2  Mask to keep portrait from overflowing out of frame border
-    jimp.read(playerInfo.levelFrame),        //3  Level frame
-    jimp.read(playerInfo.star),              //4  Level stars
-    jimp.loadFont('./fonts/name/font.fnt'),  //5  White font for name (big)
-    jimp.loadFont('./fonts/blue/font.fnt'),  //6  Blue font for header (medium)
-    jimp.loadFont('./fonts/purple/font.fnt'),//7  Purple font for header (medium)
-    jimp.loadFont('./fonts/green/font.fnt'), //8  Purple font for header (small)
-    jimp.loadFont('./fonts/white/font.fnt'), //9  Purple font for header (small)
-    jimp.loadFont('./fonts/red/font.fnt'),   //10 Purple font for header (small)
+    jimp.read('./images/playercardBG.png'),               //0  Background
+    jimp.read(playerInfo.portrait),                       //1  Player portrait
+    jimp.read('./images/iconmask.png'),                   //2  Mask to keep portrait from overflowing out of frame border
+    jimp.read(playerInfo.levelFrame),                     //3  Level frame
+    (playerInfo.star) ? jimp.read(playerInfo.star): null, //4  Level stars
+    jimp.loadFont('./fonts/name/font.fnt'),               //5  White font for name (big)
+    jimp.loadFont('./fonts/blue/font.fnt'),               //6  Blue font for header (medium)
+    jimp.loadFont('./fonts/purple/font.fnt'),             //7  Purple font for header (medium)
+    jimp.loadFont('./fonts/green/font.fnt'),              //8  Purple font for header (small)
+    jimp.loadFont('./fonts/white/font.fnt'),              //9  Purple font for header (small)
+    jimp.loadFont('./fonts/red/font.fnt'),                //10 Purple font for header (small)
     );
 
   //When everything is loaded, composite image
