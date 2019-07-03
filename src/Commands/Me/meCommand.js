@@ -20,6 +20,7 @@ const meCommand = (msg, command) => {
         if(err)throw err;
 
         //Store battle tag and add it to command to pass to stats modules
+        console.log(res);
         const battleTag = res[0].battleTag;
         command[2] = battleTag;
 

@@ -1,3 +1,5 @@
+//TODO: deleteme
+
 const formatPlayerStats = (playerJSON) => {
 //If level reads 0, it's actually 100
 let level = playerJSON.level;

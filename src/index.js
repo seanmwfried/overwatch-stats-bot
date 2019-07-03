@@ -51,6 +51,9 @@ client.on('message', msg => {
       case "me":
         commands.me(msg, command);
         break;
+      case "test":
+        commands.test(msg, command);
+        break;
       default:
         msg.reply("Command not recognized. Type `!o help` for list of commands.");
     }

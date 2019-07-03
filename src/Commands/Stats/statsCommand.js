@@ -1,4 +1,5 @@
 const getPlayer = require('./getPlayer');
+const getStatsImage = require('../../ImageBuilder/getStatsImage');
 
 const statsCommand = (msg, command) => {
   //Make sure battletag is in the command
@@ -14,7 +15,10 @@ const statsCommand = (msg, command) => {
   }else{
     //Get player info
     getPlayer(player, (playerInfo) => {
-      msg.reply(playerInfo);
+      console.log(playerInfo);
+      getStatsImage(playerInfo, (imageBuffer) => {
+        msg.reply('', {file: imageBuffer});
+      });
     });
   }
 }

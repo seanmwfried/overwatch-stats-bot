@@ -1,4 +1,6 @@
+//File to be constantly rewritten to test functionality
 const overwatch = require('overwatch-api');
+const getStatsImage = require('../../ImageBuilder/getStatsImage');
 
 const getPlayer = (playerArray, callback) => {
   //overwatch api requires battletag to look like Krusher99-1234 where - replaces the usual #
@@ -18,4 +20,13 @@ const getPlayer = (playerArray, callback) => {
   })
 }
 
-module.exports = getPlayer;
+const testCommand = (msg, command) => {
+  getPlayer(['StarMech', '1453'], (playerInfo) => {
+    console.log(playerInfo);
+    getStatsImage(playerInfo, (imageBuffer) => {
+      msg.reply("test", {file: imageBuffer});
+    });
+  });
+}
+
+module.exports = testCommand;
