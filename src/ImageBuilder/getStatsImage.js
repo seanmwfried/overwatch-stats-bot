@@ -8,7 +8,7 @@ const getStatsImage = (playerInfo, callback) => {
     jimp.read(playerInfo.portrait),                       //1  Player portrait
     jimp.read('./images/iconmask.png'),                   //2  Mask to keep portrait from overflowing out of frame border
     jimp.read(playerInfo.levelFrame),                     //3  Level frame
-    (playerInfo.star) ? jimp.read(playerInfo.star): null, //4  Level stars
+    (playerInfo.star) ? jimp.read(playerInfo.star): null, //4  Level stars (only try to read if string isn't empty)
     jimp.loadFont('./fonts/name/font.fnt'),               //5  White font for name (big)
     jimp.loadFont('./fonts/blue/font.fnt'),               //6  Blue font for header (medium)
     jimp.loadFont('./fonts/purple/font.fnt'),             //7  Purple font for header (medium)
