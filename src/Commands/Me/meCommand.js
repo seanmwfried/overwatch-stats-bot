@@ -21,11 +21,17 @@ const meCommand = (msg, command) => {
 
         //Store battle tag and add it to command to pass to stats modules
         console.log(res);
-        const battleTag = res[0].battleTag;
-        command[2] = battleTag;
 
-        //Get and display stats
-        getStats(msg, command);
+        //Send message
+        if(res[0]){
+          const battleTag = res[0].battleTag;
+          command[2] = battleTag;
+
+          //Get and display stats
+          getStats(msg, command);
+        }else{
+          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link Name#1234`. Keep in mind that BattleTags are case sensitive!")
+        }
       });
       // msg.reply("Linked your account!");
     }
