@@ -12,7 +12,6 @@ const meCommand = (msg, command) => {
     //Set up db and collection
     const db = client.db(mongo.dbName);
     const collection = db.collection(mongo.collectionName);
-    let record;
 
     try{
       //Find record. Document ID is Discord ID
@@ -20,11 +19,18 @@ const meCommand = (msg, command) => {
         if(err)throw err;
 
         //Store battle tag and add it to command to pass to stats modules
-        const battleTag = res[0].battleTag;
-        command[2] = battleTag;
+        console.log(res);
 
-        //Get and display stats
-        getStats(msg, command);
+        //Send message
+        if(res[0]){
+          const battleTag = res[0].battleTag;
+          command[2] = battleTag;
+
+          //Get and display stats
+          getStats(msg, command);
+        }else{
+          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link Name#1234`. Keep in mind that BattleTags are case sensitive!")
+        }
       });
       // msg.reply("Linked your account!");
     }

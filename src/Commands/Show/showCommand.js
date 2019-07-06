@@ -10,19 +10,18 @@ const showCommand = (msg, command) => {
 
     //Set up db and collection
     const db = client.db(mongo.dbName);
-    const collection = db.collection(mongo.collectionName);
-    let record;
+    const collection = db.collection(mongo.collectionName);    
 
     try{
       //Find record. Document ID is Discord ID
-      record = collection.find({_id: msg.author.id}).toArray((err, res) => {
+      collection.find({_id: msg.author.id}).toArray((err, res) => {
         if(err)throw err;
 
         //Send message
         if(res[0]){
           msg.reply("The BattleTag on file for you is `" +res[0].battleTag + '`');
         }else{
-          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link [BattleTag]`")
+          msg.reply("No BattleTag on file for you. Link your BattleTag using `!o link Name#1234`. Keep in mind that BattleTags are case sensitive!")
         }
       });
       // msg.reply("Linked your account!");
