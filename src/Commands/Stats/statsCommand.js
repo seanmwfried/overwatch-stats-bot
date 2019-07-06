@@ -15,9 +15,14 @@ const statsCommand = (msg, command) => {
   }else{
     //Get player info
     getPlayer(player, (playerInfo) => {
-      getStatsImage(playerInfo, (imageBuffer) => {
-        msg.reply('', {file: imageBuffer});
-      });
+      //If playerInfo is just a string, an error occurred
+      if(typeof playerInfo === 'string' || playerInfo instanceof String){
+        msg.reply(playerInfo);
+      }else{
+        getStatsImage(playerInfo, (imageBuffer) => {
+          msg.reply('', {file: imageBuffer});
+        });
+      }
     });
   }
 }

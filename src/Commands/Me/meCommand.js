@@ -12,7 +12,6 @@ const meCommand = (msg, command) => {
     //Set up db and collection
     const db = client.db(mongo.dbName);
     const collection = db.collection(mongo.collectionName);
-    let record;
 
     try{
       //Find record. Document ID is Discord ID
