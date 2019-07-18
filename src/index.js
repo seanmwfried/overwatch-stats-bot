@@ -61,5 +61,7 @@ client.on('message', msg => {
   }
 });
 
+client.on('error', console.error);
+
 //Link start!
 client.login(loginKey);
