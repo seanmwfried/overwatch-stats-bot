@@ -20,7 +20,7 @@ const statsCommand = (msg, command) => {
         msg.reply(playerInfo);
       }else{
         getStatsImage(playerInfo, (imageBuffer) => {
-          msg.reply('', {file: imageBuffer});
+          msg.channel.send('', {file: imageBuffer});
         });
       }
     });

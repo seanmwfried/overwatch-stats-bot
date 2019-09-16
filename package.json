@@ -5,9 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "jimp": "^0.6.4",
-    "mongodb": "^3.2.7",
-    "overwatch-api": "^0.7.5"
+    "jimp": "^0.6.8",
+    "mongodb": "^3.3.2",
+    "overwatch-api": "^0.8.0"
   },
   "devDependencies": {},
   "scripts": {

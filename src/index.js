@@ -15,7 +15,7 @@
 
 /*
   TODO:
-    Image generation
+    help command
 */
 
 const discord = require('discord.js');
